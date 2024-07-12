@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ApiResponseType } from "../../types/api";
 import { SERVER_URL } from "../../utils/urls";
 import Skeleton from "../../components/ui/skeleton";
