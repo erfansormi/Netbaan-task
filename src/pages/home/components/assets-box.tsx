@@ -59,7 +59,7 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
         </div>
       </div>
 
-      <div className="flex items-center !pt-5 *:basis-1/3 gap-2">
+      <div className="flex items-center !pt-5 *:basis-1/3 gap-x-2 gap-y-3">
         <AssetsBoxIcon icon={<Globe />} title="IPs" value={data.ips} />
         <AssetsBoxIcon icon={<Zap />} title="Ports" value={data.ports} />
         <AssetsBoxIcon icon={<Bug />} title="Vulns" value={data.vulns} />

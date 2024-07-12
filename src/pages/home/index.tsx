@@ -35,7 +35,7 @@ const HomePage = () => {
       <div className="container w-full">
         {isLoading ? (
           <div className="flex flex-col gap-8">
-            <div className="grid-cols-3 w-full grid gap-8">
+            <div className="lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full grid gap-8">
               <Skeleton height={300} />
               <Skeleton height={300} />
               <Skeleton height={300} />
@@ -45,7 +45,7 @@ const HomePage = () => {
         ) : data ? (
           <div className="flex flex-col gap-8">
             {/* DOMAINS */}
-            <div className="grid-cols-3 w-full grid gap-8">
+            <div className="lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full grid gap-8">
               <AssetsBox type="domain" {...data.domain} />
               <AssetsBox type="ip" {...data.ip} />
               <AssetsBox type="cloud" {...data.cloud} />

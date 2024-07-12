@@ -29,10 +29,10 @@ const AssetsTable = ({ assets }: { assets: ApiResponseType.Asset[] }) => {
       )}
 
       {/* ASSETS TABLE */}
-      <div className="rounded-xl bg-brand-muted-700 flex flex-col gap-10 px-4 py-4">
+      <div className="rounded-xl bg-brand-muted-700 flex flex-col gap-10 px-4 py-4 overflow-hidden">
         <h2 className="font-bold">Assets</h2>
 
-        <table className="text-sm border-separate border-spacing-x-0 border-spacing-y-3">
+        <table className="text-sm border-separate border-spacing-x-0 border-spacing-y-3 overflow-x-scroll text-nowrap">
           <thead className="border-b-[14px] border-brand-muted-700">
             <tr className="capitalize *:bg-brand-muted-300 *:py-2">
               <th className="rounded-l-md">grade</th>
