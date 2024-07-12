@@ -13,7 +13,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    await fetch(`${SERVER_URL}/metainfo`)
+    await fetch(`${SERVER_URL}/v3/6cee870e-47bd-45b7-8650-8c171b6984b5`)
       .then((res) => res.json())
       .then((json: ApiResponseType.MetaInfoResponseType) => {
         setData(json);

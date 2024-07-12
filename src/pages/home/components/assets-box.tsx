@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { ApiResponseType } from "../../../types/api";
-import { Bug, Earth, Globe, MoveUpRight, Zap } from "lucide-react";
+import { Bug, Earth, Globe, MoveUpRight, UploadCloud, Zap } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "cloud" }) => {
@@ -8,7 +8,7 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
 
   return (
     <div
-      className="p-3 cursor-pointer rounded-xl bg-brand-gray-700 flex flex-col *:pb-2 divide-y divide-zinc-500 text-white font-semibold text-sm"
+      className="p-3 cursor-pointer hover:scale-105 transition-transform duration-300 rounded-xl bg-brand-gray-700 flex flex-col *:pb-2 divide-y divide-zinc-500 text-white font-semibold text-sm"
       onClick={() => {
         setSearchParams({ "assets-type": data.type });
       }}
@@ -16,8 +16,16 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
       <div className="flex justify-between">
         <div className="flex flex-col gap-4">
           <div className="size-14 overflow-hidden rounded-xl flex flex-col">
-            <div className="bg-orange-500 grow center">
-              <Earth size={26} />
+            <div
+              className={`grow center ${
+                data.type === "domain"
+                  ? "bg-orange-500"
+                  : data.type === "ip"
+                  ? "bg-indigo-500"
+                  : "bg-lime-500"
+              }`}
+            >
+              {data.type === "cloud" ? <UploadCloud size={26} /> : <Earth size={26} />}
             </div>
             <div className="h-5 font-bold bg-white center text-zinc-900">{data.total}</div>
           </div>
