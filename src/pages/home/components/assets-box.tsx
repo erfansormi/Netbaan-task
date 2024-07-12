@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
 import { ApiResponseType } from "../../../types/api";
 import { Bug, Earth, Globe, MoveUpRight, UploadCloud, Zap } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
+import AssetsBoxChart from "./assets-box-chart";
+import AssetsBoxIcon from "./assets-boc-icon";
 
 const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "cloud" }) => {
   const [, setSearchParams] = useSearchParams();
@@ -44,7 +45,7 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
             <span className="text-base">{data.total_live}</span>
           </div>
           <div>
-            <img src="/public/chart.svg" />
+            <AssetsBoxChart numbers={data.live} />
           </div>
         </div>
 
@@ -54,7 +55,7 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
             <span className="text-base">{data.total_monitored}</span>
           </div>
           <div>
-            <img src="/public/chart.svg" />
+            <AssetsBoxChart numbers={data.monitored} />
           </div>
         </div>
       </div>
@@ -69,23 +70,3 @@ const AssetsBox = (data: ApiResponseType.AssetsBox & { type: "domain" | "ip" | "
 };
 
 export default AssetsBox;
-
-const AssetsBoxIcon = ({
-  icon,
-  title,
-  value,
-}: {
-  title: string;
-  value: string | number;
-  icon: ReactNode;
-}) => {
-  return (
-    <div className="flex items-center gap-1.5">
-      <div className="rounded-md bg-brand-cyan size-10 center">{icon}</div>
-      <div className="flex flex-col">
-        <span>{title}</span>
-        <span className="text-base leading-none">{value}</span>
-      </div>
-    </div>
-  );
-};
