@@ -1,35 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace ApiResponseType {
   interface MetaInfoResponseType {
-    domain: Domain;
-    ip: Ip;
-    cloud: Cloud;
+    domain: AssetsBox;
+    ip: AssetsBox;
+    cloud: AssetsBox;
     assets: Asset[];
   }
 
-  interface Domain {
-    total: number;
-    total_live: number;
-    live: number[];
-    total_monitored: number;
-    monitored: number[];
-    ips: number;
-    ports: number;
-    vulns: number;
-  }
-
-  interface Ip {
-    total: number;
-    total_live: number;
-    live: number[];
-    total_monitored: number;
-    monitored: number[];
-    ips: number;
-    ports: number;
-    vulns: number;
-  }
-
-  interface Cloud {
+  interface AssetsBox {
     total: number;
     total_live: number;
     live: number[];
